@@ -1,5 +1,8 @@
 ---
-import '@fontsource/inter';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/inter/800.css';
 
 interface Props {
   title: string;
@@ -18,7 +21,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="text-neutral-50 bg-neutral-950">
     <slot />
   </body>
 </html>
@@ -28,7 +31,5 @@ const { title } = Astro.props;
   }
   html {
     font-family: 'Inter', system-ui, sans-serif;
-    background: #0b0b0b;
-    color: white;
   }
 </style>
