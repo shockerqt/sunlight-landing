@@ -7,4 +7,95 @@ import Section from '@/components/Section.astro';
   <p class="text-xl max-w-2xl mx-auto text-neutral-400 mb-28">
     Asesórate con nuestros profesionales para poder darle vida a tus ideas.
   </p>
+  <div
+    class="flex gap-20 flex-col lg:flex-row items-center max-w-screen-sm lg:max-w-none lg:px-8 mx-auto"
+  >
+    <div class="shrink-0 max-w-lg w-full">
+      <form
+        name="contact-form"
+        class="px-6 py-9 rounded-lg border border-neutral-700"
+        action=""
+      >
+        <label class="block mb-3 text-left text-neutral-200" for="email"
+          >Ingresa tu correo electrónico</label
+        >
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class:list={[
+            'block w-full rounded-md px-4 py-3 mb-6 bg-transparent outline-none transition-all',
+            'ring-1 ring-neutral-700 hover:ring-neutral-400 focus:ring-2 focus:ring-inset focus:ring-neutral-400 placeholder:text-neutral-700',
+          ]}
+          placeholder="example@domain.com"
+          required
+        />
+        <label class="block mb-3 text-left text-neutral-200" for="subject"
+          >¿En qué podemos ayudarte?</label
+        >
+        <textarea
+          name="subject"
+          id="subject"
+          rows="5"
+          class:list={[
+            'block w-full rounded-md px-4 py-3 mb-6 bg-transparent outline-none transition-all placeholder:text-neutral-700',
+            'ring-1 ring-neutral-700 hover:ring-neutral-400 focus:ring-2 focus:ring-inset focus:ring-neutral-400',
+          ]}
+          placeholder="Quiero una página web para mi negocio..."></textarea>
+        <button
+          id="submit-button"
+          type="submit"
+          disabled
+          class:list={[
+            'block ml-auto text-neutral-950 bg-neutral-50 hover:bg-neutral-300 transition-colors py-3 px-8 rounded-lg cursor-pointer',
+            'disabled:bg-transparent disabled:border disabled:border-neutral-700 disabled:text-neutral-700 disabled:cursor-not-allowed',
+            'focus:ring-2 focus:ring-inset focus:ring-neutral-400',
+          ]}
+        >
+          Enviar
+        </button>
+      </form>
+      <small class="text-neutral-600 text-left block my-2"
+        >Nunca compartiremos sus datos con terceros, su privacidad es nuestra
+        prioridad.</small
+      >
+    </div>
+    <div class="text-center lg:text-right">
+      <svg
+        class="h-10 fill-neutral-800 mx-auto lg:mr-0 mb-10"
+        viewBox="0 0 52 40"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22.6965 2.85209L20.8415 0C8.00706 8.627 0.876831 19.109 0.876831 27.736C0.876831 36.0778 7.00997 40 12.2145 40C18.7743 40 23.4083 34.4373 23.4083 28.5916C23.4083 23.6724 20.271 19.4649 16.0636 17.8952C14.8521 17.4662 13.7112 17.1103 13.7112 15.0431C13.7112 12.4055 15.637 8.48554 22.6965 2.85209ZM51.0029 2.85209L49.1479 0C36.455 8.627 29.1833 19.109 29.1833 27.736C29.1833 36.0778 35.4579 40 40.6624 40C47.2929 40 52 34.4373 52 28.5916C52 23.6724 48.792 19.4649 44.4408 17.8952C43.2292 17.4662 42.1591 17.1103 42.1591 15.0431C42.1591 12.4055 44.1556 8.48326 51.0006 2.84981L51.0029 2.85209Z"
+        ></path>
+      </svg>
+      <blockquote cite="https://www.goodreads.com/quotes/1000">
+        <p class="text-2xl mb-4">
+          "En Sunlight, no solo diseñamos sitios web, sino que también
+          iluminamos tus ideas."
+        </p>
+        <footer class="text-neutral-400 text-lg">
+          —Zavier, <cite>Cofundador Sunlight</cite>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
 </Section>
+
+<script>
+  window.addEventListener('load', () => {
+    const contactForm = document.forms.namedItem('contact-form');
+    const submitButton = document.getElementById(
+      'submit-button'
+    ) as HTMLButtonElement;
+
+    contactForm?.addEventListener('input', () => {
+      if (contactForm.checkValidity()) {
+        submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
+      }
+    });
+  });
+</script>
