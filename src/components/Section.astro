@@ -1,8 +1,14 @@
 ---
-const { class: className } = Astro.props;
+interface Props {
+  class?: string;
+  id?: string;
+}
+
+const { class: className, id } = Astro.props;
 ---
 
 <section
+  id={id}
   class:list={['px-8 min-h-screen first:min-h-[calc(100vh-80px)]', className]}
 >
   <slot />
