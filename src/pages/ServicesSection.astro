@@ -42,14 +42,14 @@ const serviceList = [
     vida a tus proyectos web. Aquí te presentamos las características que nos
     hacen destacar.
   </p>
-  <div class="flex items-stretch gap-16 mb-20">
-    <div class="bg-neutral-800 max-w-xl w-full"></div>
-    <ul class="text-left flex flex-col gap-14">
+  <div class="flex flex-col lg:flex-row items-stretch gap-16 mb-20">
+    <div class="bg-neutral-800 lg:max-w-xl w-full min-h-[576px]"></div>
+    <ul class="text-left flex flex-col gap-14 basis-80 grow max-w-xl">
       {
         serviceList.splice(0, 3).map((service) => (
           <li>
             <figure class="bg-[#FFDB71] h-12 w-12 grid items-center justify-center text-neutral-800 rounded-md text-2xl mb-5">
-              <img class="h-6" src="/favicon.svg" alt="Rocket" />
+              <img class="h-6" src="/logo-black.svg" alt="Rocket" />
             </figure>
             <h3 class="mb-3 font-medium text-xl">{service.title}</h3>
             <p class="text-neutral-400">{service.description}</p>
@@ -58,14 +58,14 @@ const serviceList = [
       }
     </ul>
   </div>
-  <div class="flex items-stretch gap-16">
-    <div class="bg-neutral-800 max-w-xl w-full"></div>
-    <ul class="text-left flex flex-col gap-14">
+  <div class="flex flex-col lg:flex-row items-stretch gap-16 mb-20">
+    <div class="bg-neutral-800 lg:max-w-xl w-full min-h-[576px]"></div>
+    <ul class="text-left flex flex-col gap-14 basis-80 grow max-w-xl">
       {
         serviceList.splice(0, 3).map((service) => (
           <li>
             <figure class="bg-[#FFDB71] h-12 w-12 grid items-center justify-center text-neutral-800 rounded-md text-2xl mb-5">
-              <img class="h-6" src="/favicon.svg" alt="Rocket" />
+              <img class="h-6" src="/logo-black.svg" alt="Rocket" />
             </figure>
             <h3 class="mb-3 font-medium text-xl">{service.title}</h3>
             <p class="text-neutral-400">{service.description}</p>
