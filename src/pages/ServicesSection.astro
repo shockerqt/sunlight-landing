@@ -1,5 +1,5 @@
 ---
-import Section from '@/components/Section.astro';
+import GradientSpan from '@/components/GradientSpan.astro';
 
 const serviceList = [
   {
@@ -35,8 +35,10 @@ const serviceList = [
 ];
 ---
 
-<Section class="text-center py-10" id="services">
-  <h2 class="text-6xl font-bold mb-9">Nuestros Servicios en Detalle</h2>
+<section class="text-center py-10 px-8" id="services">
+  <h2 class="text-5xl md:text-6xl font-bold mb-9 tracking-tight leading-[0.95]">
+    <GradientSpan>Nuestros Servicios en Detalle</GradientSpan>
+  </h2>
   <p class="text-xl max-w-2xl mx-auto text-neutral-400 mb-28">
     Descubre cómo nuestros servicios personalizados y profesionales pueden dar
     vida a tus proyectos web. Aquí te presentamos las características que nos
@@ -74,4 +76,4 @@ const serviceList = [
       }
     </ul>
   </div>
-</Section>
+</section>

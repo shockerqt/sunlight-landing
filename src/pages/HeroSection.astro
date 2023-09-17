@@ -1,5 +1,6 @@
 ---
-import Section from '@/components/Section.astro';
+import GradientSpan from '@/components/GradientSpan.astro';
+('');
 
 const technologies = [
   {
@@ -14,15 +15,20 @@ const technologies = [
 const techx5 = [...technologies, ...technologies, ...technologies];
 ---
 
-<Section
-  class="text-center flex flex-col h-full justify-center items-center py-20"
+<section
+  class="text-center flex flex-col h-full justify-center items-center py-20 px-8 min-h-[calc(100vh-80px)]"
 >
   <h1
-    class="text-6xl sm:text-8xl md:text-9xl font-semibold tracking-tighter leading-[0.9] mb-10 tall:max-w-3xl"
+    class={`
+      text-6xl sm:text-8xl md:text-9xl font-semibold tracking-tighter leading-[0.9] mb-10 tall:max-w-3xl
+    `}
   >
-    Brindamos
-    <span class="whitespace-nowrap">Luz a</span>{' '}
-    <span class="whitespace-nowrap">Tus Ideas.</span>
+    <span
+      class="bg-gradient-to-br from-[#FBBD05] to-[#BC4A09] bg-clip-text text-transparent px-1"
+      >Brindamos</span
+    >{' '}
+    <GradientSpan class="whitespace-nowrap">Luz A</GradientSpan>{' '}
+    <GradientSpan class="whitespace-nowrap">Las Ideas</GradientSpan>{' '}
   </h1>
   <p class="text-2xl text-neutral-400 mb-20">
     Sunlight, tu socio en la creación profesional de sitios web
@@ -44,4 +50,4 @@ const techx5 = [...technologies, ...technologies, ...technologies];
       ))
     }
   </ul>
-</Section>
+</section>

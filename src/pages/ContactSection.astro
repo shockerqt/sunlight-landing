@@ -1,9 +1,11 @@
 ---
-import Section from '@/components/Section.astro';
+import GradientSpan from '@/components/GradientSpan.astro';
 ---
 
-<Section class="text-center py-10" id="services">
-  <h2 class="text-6xl font-bold mb-9">Habla con nuestro equipo</h2>
+<section class="text-center py-10 px-8 mb-16" id="contact">
+  <h2 class="text-5xl md:text-6xl font-bold mb-9 tracking-tight leading-[0.95]">
+    <GradientSpan>Habla con nuestro equipo</GradientSpan>
+  </h2>
   <p class="text-xl max-w-2xl mx-auto text-neutral-400 mb-28">
     Asesórate con nuestros profesionales para poder darle vida a tus ideas.
   </p>
@@ -81,7 +83,7 @@ import Section from '@/components/Section.astro';
       </blockquote>
     </div>
   </div>
-</Section>
+</section>
 
 <script>
   window.addEventListener('load', () => {
