@@ -1,2 +1,5 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://sunlight.cl/sitemap-index.xml
+Sitemap: https://www.sunlight.cl/sitemap-index.xml
