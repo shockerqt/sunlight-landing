@@ -1,36 +1,51 @@
 ---
+import cpuIcon from '@/assets/icons/cpu.svg';
+import figmaIcon from '@/assets/icons/figma.svg';
+import flagIcon from '@/assets/icons/flag.svg';
+import globeIcon from '@/assets/icons/globe.svg';
+import smartphoneIcon from '@/assets/icons/smartphone.svg';
+import zapIcon from '@/assets/icons/zap.svg';
+import gcsimImage from '@/assets/images/gcsim.png';
+import payloadImage from '@/assets/images/payload.webp';
 import GradientSpan from '@/components/GradientSpan.astro';
+import { Image } from 'astro:assets';
 
 const serviceList = [
   {
     title: 'Tecnologías de Vanguardia',
+    image: cpuIcon,
     description:
       'Ofrecemos soluciones de desarrollo web con las últimas tecnologías del mercado. Nuestros proyectos son escalables y fáciles de mantener.',
   },
   {
-    title: 'Compromiso con la Accesibilidad',
-    description:
-      'Diseñamos sitios web que cumplen con estándares de accesibilidad web para llegar a un público más amplio.',
-  },
-  {
     title: 'SEO y visibilidad',
+    image: globeIcon,
     description:
       'Nuestros sitios web están optimizados para motores de búsqueda y cumplen con las mejores prácticas de SEO.',
   },
   {
+    title: 'Compromiso con la Accesibilidad',
+    image: flagIcon,
+    description:
+      'Diseñamos sitios web que cumplen con estándares de accesibilidad web para llegar a un público más amplio.',
+  },
+  {
     title: 'Diseño UX/UI Personalizado',
+    image: figmaIcon,
     description:
       'Diseñamos interfaces de usuario intuitivas y atractivas para que tus usuarios tengan una experiencia de usuario única.',
   },
   {
-    title: 'Optimización de Rendimiento',
-    description:
-      'Nos especializamos en la optimización de velocidad y rendimiento de sitios web.',
-  },
-  {
     title: 'Diseño Responsivo',
+    image: smartphoneIcon,
     description:
       'Nuestros sitios web se adaptan a cualquier dispositivo y tamaño de pantalla.',
+  },
+  {
+    title: 'Optimización de Rendimiento',
+    image: zapIcon,
+    description:
+      'Nos especializamos en la optimización de velocidad y rendimiento de sitios web.',
   },
 ];
 ---
@@ -45,13 +60,17 @@ const serviceList = [
     hacen destacar.
   </p>
   <div class="flex flex-col lg:flex-row items-stretch gap-16 mb-20">
-    <div class="bg-neutral-800 lg:max-w-xl w-full min-h-[576px]"></div>
+    <Image
+      src={payloadImage}
+      alt="Payload illustration"
+      class="lg:max-w-xl w-full h-72 lg:h-[576px] object-cover"
+    />
     <ul class="text-left flex flex-col gap-14 basis-80 grow max-w-xl">
       {
         serviceList.splice(0, 3).map((service) => (
           <li>
             <figure class="bg-[#FFDB71] h-12 w-12 grid items-center justify-center text-neutral-800 rounded-md text-2xl mb-5">
-              <img class="h-6" src="/logo-black.svg" alt="Rocket" />
+              <Image class="h-6" src={service.image} alt={service.title} />
             </figure>
             <h3 class="mb-3 font-medium text-xl">{service.title}</h3>
             <p class="text-neutral-400">{service.description}</p>
@@ -61,13 +80,17 @@ const serviceList = [
     </ul>
   </div>
   <div class="flex flex-col lg:flex-row items-stretch gap-16 mb-20">
-    <div class="bg-neutral-800 lg:max-w-xl w-full min-h-[576px]"></div>
+    <Image
+      src={gcsimImage}
+      alt="GCSim illustration"
+      class="lg:max-w-xl w-full h-72 lg:h-[576px] object-contain"
+    />
     <ul class="text-left flex flex-col gap-14 basis-80 grow max-w-xl">
       {
         serviceList.splice(0, 3).map((service) => (
           <li>
             <figure class="bg-[#FFDB71] h-12 w-12 grid items-center justify-center text-neutral-800 rounded-md text-2xl mb-5">
-              <img class="h-6" src="/logo-black.svg" alt="Rocket" />
+              <Image class="h-6" src={service.image} alt="Rocket" />
             </figure>
             <h3 class="mb-3 font-medium text-xl">{service.title}</h3>
             <p class="text-neutral-400">{service.description}</p>
