@@ -36,6 +36,7 @@ export async function onRequestPost(context) {
     });
 
     if (response.ok) {
+      console.log(`[LOGGING FROM /submit]: Succesfully sent message from ${formData.get('email')}`);
       return new Response('Mensaje enviado correctamente', {
         status: 200,
         headers: {
@@ -43,14 +44,16 @@ export async function onRequestPost(context) {
         },
       });
     } else {
+      console.log(`[LOGGING FROM /submit]: Error sending message from ${formData.get('email')}`);
       return new Response('Error al enviar el mensaje', {
-        status: 500,
+        status: response.status,
         headers: {
           'Content-Type': 'text/plain',
         },
       });
     }
   } catch (error) {
+    console.log(`[LOGGING FROM /submit]: Error sending message`);
     return new Response('Error al enviar el mensaje', {
       status: 500,
       headers: {
