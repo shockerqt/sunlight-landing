@@ -1,17 +1,16 @@
 ---
-import {
-  default as aiLogo,
-  default as astroLogo,
-} from '@/assets/logos/astro.svg';
+import astroLogo from '@/assets/logos/astro.svg';
 import cloudflareLogo from '@/assets/logos/cloudflare.svg';
 import fastifyLogo from '@/assets/logos/fastify.svg';
 import figmaLogo from '@/assets/logos/figma.svg';
+import aiLogo from '@/assets/logos/illustrator.svg';
 import jiraLogo from '@/assets/logos/jira.svg';
 import nextjsLogo from '@/assets/logos/nextjs.svg';
 import reactLogo from '@/assets/logos/react.svg';
 import tailwindLogo from '@/assets/logos/tailwindcss.svg';
 import vercelLogo from '@/assets/logos/vercel.svg';
 import vueLogo from '@/assets/logos/vue.svg';
+import GoldenGradient from '@/components/GoldenGradient.astro';
 import GradientSpan from '@/components/GradientSpan.astro';
 import { Image } from 'astro:assets';
 
@@ -64,29 +63,27 @@ const technologies = [
 ---
 
 <section
-  class="text-center flex flex-col h-full justify-center items-center py-20 px-8 min-h-[calc(100vh-80px)]"
+  class="text-center flex flex-col h-full justify-center items-center py-12 sm:py-20 px-6 sm:px-8 min-h-[calc(100vh-80px)]"
 >
   <h1
-    class={`
-      text-6xl sm:text-8xl md:text-9xl font-extrabold tracking-tighter leading-[0.9] mb-10 tall:max-w-3xl
-    `}
+    class="text-6xl sm:text-8xl md:text-9xl font-extrabold tracking-tighter leading-[0.9] mb-8 sm:mb-10"
   >
-    <span
-      class="bg-gradient-to-br from-[#FBBD05] to-[#BC4A09] bg-clip-text text-transparent px-1"
-      >Brindamos</span
-    >{' '}
-    <GradientSpan class="whitespace-nowrap">Luz A</GradientSpan>{' '}
-    <GradientSpan class="whitespace-nowrap">Las Ideas</GradientSpan>{' '}
+    <!-- pun about light or enlightning -->
+    <GoldenGradient class="block">Ilumina</GoldenGradient>
+    <GradientSpan>tu Proyecto.</GradientSpan>
   </h1>
-  <p class="text-2xl text-neutral-400 mb-20">
-    Sunlight, tu socio en la creación profesional de sitios web
+  <p
+    class="text-xl sm:text-2xl text-neutral-400 mb-10 sm:mb-20 max-w-screen-md"
+  >
+    Somos un equipo de profesionales que te ayudará a llevar tu proyecto al
+    siguiente nivel.
   </p>
   <a
-    class="block appearance-none font-medium text-neutral-950 bg-neutral-50 hover:bg-neutral-300 transition-colors py-4 px-8 rounded-lg mb-20"
+    class="block appearance-none font-medium text-neutral-950 bg-neutral-50 hover:bg-neutral-300 transition-colors py-4 px-8 rounded-lg mb-14 sm:mb-20"
     href="#contact">Contáctanos</a
   >
   <small
-    class="uppercase font-bold text-xs tracking-[0.2em] text-neutral-400 mb-10"
+    class="uppercase font-bold text-xs tracking-[0.2em] text-neutral-400 mb-8 sm:mb-10"
     >Conoce nuestras tecnologías</small
   >
   <div
@@ -97,13 +94,13 @@ const technologies = [
     ]}
   >
     <div
-      class="flex overflow-x-hidden min-w-min justify-center shrink-0 w-screen"
+      class="flex overflow-x-hidden min-w-min justify-center shrink-0 w-screen h-8"
     >
       <div class="horizontal-scrolling-items flex shrink-0">
         {
           [...technologies, ...technologies].map(({ image, alt }) => (
             <Image
-              class="h-8 w-32 shrink-0"
+              class="h-full w-24 sm:w-32 shrink-0"
               src={image}
               height={32}
               alt={alt}
@@ -116,7 +113,7 @@ const technologies = [
         {
           [...technologies, ...technologies].map(({ image, alt }) => (
             <Image
-              class="h-8 w-32 shrink-0"
+              class="h-full w-24 sm:w-32 shrink-0"
               src={image}
               height={32}
               alt={alt}
@@ -134,7 +131,7 @@ const technologies = [
         transform: translateX(0);
       }
       to {
-        transform: translateX(calc(-8rem * 11));
+        transform: translateX(-50%);
       }
     }
     .horizontal-scrolling-items {

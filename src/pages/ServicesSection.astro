@@ -50,11 +50,15 @@ const serviceList = [
 ];
 ---
 
-<section class="text-center py-10 px-8" id="services">
-  <h2 class="text-5xl md:text-6xl font-bold mb-9 tracking-tight leading-[0.95]">
+<section class="text-center py-10 px-6 sm:px-8" id="services">
+  <h1
+    class="text-4xl sm:text-5xl md:text-6xl font-bold mb-9 tracking-tight leading-[0.98] md:leading-[0.95]"
+  >
     <GradientSpan>Nuestros Servicios en Detalle</GradientSpan>
-  </h2>
-  <p class="text-xl max-w-2xl mx-auto text-neutral-400 mb-14 lg:mb-28">
+  </h1>
+  <p
+    class="text-lg sm:text-xl max-w-2xl mx-auto text-neutral-400 mb-14 sm:mb-28"
+  >
     Descubre cómo nuestros servicios personalizados y profesionales pueden dar
     vida a tus proyectos web. Aquí te presentamos las características que nos
     hacen destacar.
@@ -72,7 +76,7 @@ const serviceList = [
             <figure class="bg-[#FFDB71] h-12 w-12 grid items-center justify-center text-neutral-800 rounded-md text-2xl mb-5">
               <Image class="h-6" src={service.image} alt={service.title} />
             </figure>
-            <h3 class="mb-3 font-medium text-xl">{service.title}</h3>
+            <h2 class="mb-3 font-medium text-xl">{service.title}</h2>
             <p class="text-neutral-400">{service.description}</p>
           </li>
         ))
@@ -92,7 +96,7 @@ const serviceList = [
             <figure class="bg-[#FFDB71] h-12 w-12 grid items-center justify-center text-neutral-800 rounded-md text-2xl mb-5">
               <Image class="h-6" src={service.image} alt="Rocket" />
             </figure>
-            <h3 class="mb-3 font-medium text-xl">{service.title}</h3>
+            <h2 class="mb-3 font-medium text-xl">{service.title}</h2>
             <p class="text-neutral-400">{service.description}</p>
           </li>
         ))
