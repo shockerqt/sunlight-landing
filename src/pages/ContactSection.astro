@@ -31,6 +31,22 @@ import GradientSpan from '@/components/GradientSpan.astro';
           placeholder="example@domain.com"
           required
         />
+        <div id="name-block" class="hidden">
+          <label class="block mb-3 text-left text-neutral-200" for="name"
+            >Ingresa tu nombre</label
+          >
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class:list={[
+              'block w-full rounded-md px-4 py-3 mb-6 bg-transparent outline-none transition-all',
+              'ring-1 ring-neutral-700 hover:ring-neutral-400 focus:ring-2 focus:ring-inset focus:ring-neutral-400 placeholder:text-neutral-700',
+            ]}
+            placeholder="John Doe"
+            required
+          />
+        </div>
         <label class="block mb-3 text-left text-neutral-200" for="subject"
           >¿En qué podemos ayudarte?</label
         >
@@ -90,16 +106,28 @@ import GradientSpan from '@/components/GradientSpan.astro';
     const submitButton = document.getElementById(
       'submit-button'
     ) as HTMLButtonElement;
+    const emailInput = contactForm?.querySelector('#email') as HTMLInputElement;
+    const nameBlock = document.getElementById('name-block');
 
-    contactForm?.addEventListener('input', () => {
-      if (contactForm.checkValidity()) {
+    const onInput = () => {
+      if (emailInput?.validity.valid) {
+        nameBlock?.classList.remove('hidden');
+      } else {
+        nameBlock?.classList.add('hidden');
+      }
+      if (contactForm?.checkValidity()) {
         submitButton.disabled = false;
       } else {
         submitButton.disabled = true;
       }
-    });
+    };
 
-    contactForm?.addEventListener('submit', submitForm);
+    contactForm?.addEventListener('input', onInput);
+
+    contactForm?.addEventListener('submit', (event) => {
+      submitForm(event);
+      onInput();
+    });
   });
 
   async function submitForm(event: Event) {

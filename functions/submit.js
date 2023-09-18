@@ -14,6 +14,10 @@ export async function onRequestPost(context) {
               value: formData.get('email'),
             },
             {
+              name: 'Nombre',
+              value: formData.get('name'),
+            },
+            {
               name: 'Mensaje',
               value: formData.get('subject'),
             },
