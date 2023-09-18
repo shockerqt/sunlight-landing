@@ -7,10 +7,11 @@ export async function onRequestPost(context) {
     const data = {
       embeds: [
         {
-          title: 'Nuevo mensaje de contacto',
+          title: 'Ticket',
+          color: 16497925,
           fields: [
             {
-              name: 'Correo electrónico',
+              name: 'Correo',
               value: formData.get('email'),
             },
             {
@@ -18,7 +19,7 @@ export async function onRequestPost(context) {
               value: formData.get('name'),
             },
             {
-              name: 'Mensaje',
+              name: 'Asunto',
               value: formData.get('subject'),
             },
           ],
