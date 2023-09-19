@@ -11,7 +11,7 @@ import tailwindLogo from '@/assets/logos/tailwindcss.svg';
 import vercelLogo from '@/assets/logos/vercel.svg';
 import vueLogo from '@/assets/logos/vue.svg';
 import GoldenGradient from '@/components/GoldenGradient.astro';
-import GradientSpan from '@/components/GradientSpan.astro';
+import SilverGradient from '@/components/SilverGradient.astro';
 import { Image } from 'astro:assets';
 
 const technologies = [
@@ -63,14 +63,15 @@ const technologies = [
 ---
 
 <section
-  class="text-center flex flex-col h-full justify-center items-center py-12 sm:py-20 px-6 sm:px-8 min-h-[calc(100vh-80px)]"
+  class="text-center flex flex-col h-full justify-center items-center py-10 sm:py-20 px-6 sm:px-8 min-h-[calc(100vh-80px)]"
 >
   <h1
-    class="text-6xl sm:text-8xl md:text-9xl font-extrabold tracking-tighter leading-[0.9] mb-8 sm:mb-10"
+    class="text-6xl sm:text-8xl md:text-9xl font-extrabold tracking-tighter leanding-[0.95] sm:leading-[0.9] mb-8 sm:mb-10 tall:max-w-screen-md"
   >
     <!-- pun about light or enlightning -->
-    <GoldenGradient class="block">Ilumina</GoldenGradient>
-    <GradientSpan>tu Proyecto.</GradientSpan>
+    <GoldenGradient class="whitespace-nowrap">Brindamos</GoldenGradient>{' '}
+    <SilverGradient class="whitespace-nowrap">Luz a</SilverGradient>{' '}
+    <SilverGradient class="whitespace-nowrap">tus Ideas.</SilverGradient>
   </h1>
   <p
     class="text-xl sm:text-2xl text-neutral-400 mb-10 sm:mb-20 max-w-screen-md"
