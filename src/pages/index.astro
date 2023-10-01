@@ -1,6 +1,4 @@
 ---
-import Footer from '@/components/Footer.astro';
-import Navbar from '@/components/Navbar.astro';
 import ContactSection from '@/components/home/ContactSection.astro';
 import HeroSection from '@/components/home/HeroSection.astro';
 import ServicesSection from '@/components/home/ServicesSection.astro';
@@ -8,11 +6,9 @@ import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="Sunlight">
-  <Navbar />
   <main class="max-w-screen-xl mx-auto">
     <HeroSection />
     <ServicesSection />
     <ContactSection />
   </main>
-  <Footer />
 </Layout>
