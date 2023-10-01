@@ -1,0 +1,17 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+const data = {
+  title: 'Post example title',
+  description: 'Post example description',
+  content: 'Post example content',
+  date: '2021-01-01',
+  slug: 'post-example',
+  tags: ['tag1', 'tag2'],
+};
+---
+
+<Layout title={`Sunlight - ${data.title}`}>
+  <h1>{data.title}</h1>
+  <small>Fecha {data.date}</small>
+</Layout>
