@@ -1,6 +1,5 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-
+import Layout from "@/layouts/Layout.astro";
 
 export async function getStaticPaths() {
   const res = await fetch('https://admin.sunlight.cl/api/posts');
@@ -24,6 +23,65 @@ const data = {
 ---
 
 <Layout title={`Sunlight - ${data.title}`}>
-  <h1>{data.title}</h1>
-  <small>Fecha {data.date}</small>
+  <!-- Titulo -->
+  <div class="text-center py-10 px-6 sm:px-8">
+    <h1
+      class="text-4xl sm:text-5xl md:text-6xl font-bold mb-9 tracking-tight leading-[0.98] md:leading-[0.95]"
+    >
+      La Importancia de Crear un Sitio Web y Ser Reconocido en Google
+    </h1>
+    <!-- Introduccion -->
+    <p class="text-xl font-normal mb-10">
+      En la era digital, la presencia en línea se ha convertido en un componente
+      esencial para individuos, empresas y organizaciones de todo tipo. En este
+      artículo, exploraremos por qué es crucial crear un sitio web y lograr el
+      reconocimiento en Google, el motor de búsqueda líder a nivel mundial.
+    </p>
+  </div>
+  <div class="flex flex-row gap-10 mb-10">
+    <!-- Detalle -->
+    <div class="flex flex-col gap-5 border-l-2 px-5 border-[#FFDB71]">
+      <h3 class="text-2xl font-semibold">Visibilidad Global</h3>
+      <p class="text-base font-normal text-neutral-400">
+        Un sitio web es la ventana al mundo en línea. Permite que tu negocio o
+        proyecto personal esté disponible para una audiencia global las 24 horas
+        del día, los 7 días de la semana. Esto amplía tus oportunidades de
+        crecimiento y alcance a un nivel sin precedentes.
+      </p>
+    </div>
+    <!-- autor -->
+    <div class="border-l-2 px-5 border-neutral-500">
+      <div class="mb-9">
+        <p class="text-xl text-neutral-400">Posteado por</p>
+        <div class="flex gap-3">
+          <img src="https://via.placeholder.com/40x40" alt="" />
+          <div>
+            <p class="text-sm font-bold">Ensyrei</p>
+            <p class="text-sm font-normal text-neutral-400">
+              Inserte un super cargo
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-xl text-neutral-400">Post relacionados</p>
+        <div class="flex gap-3">
+          <img src="https://via.placeholder.com/40x40" alt="" />
+          <p class="text-sm font-bold">Desarrollo de aplicaciones móviles</p>
+        </div>
+      </div>
+    </div>
+    <!-- conclusion -->
+  </div>
+  <div>
+    <p class="text-base font-normal text-neutral-400">
+      En resumen, la creación de un sitio web y el reconocimiento en Google
+      son pasos esenciales para alcanzar el éxito en el mundo digital actual.
+      No solo aumentan la visibilidad y la credibilidad, sino que también
+      ofrecen un control completo sobre tu presencia en línea. Invertir en un
+      sitio web bien diseñado y en estrategias de SEO efectivas puede marcar
+      la diferencia entre el éxito y la invisibilidad en el mundo en línea.
+      ¡No subestimes el poder de la presencia en la web!
+    </p>
+  </div>
 </Layout>
