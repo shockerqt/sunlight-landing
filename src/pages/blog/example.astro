@@ -1,7 +1,19 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 
-const data = {
+
+export async function getStaticPaths() {
+  const res = await fetch('https://admin.sunlight.cl/api/posts');
+  const posts = await res.json();
+
+  return posts.docs.map((post) => {
+    return {
+      params: { slug: post.id },
+      props: post;
+  });
+}
+
+const data = { 
   title: 'Post example title',
   description: 'Post example description',
   content: 'Post example content',
