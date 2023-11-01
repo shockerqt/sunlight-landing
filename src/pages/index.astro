@@ -5,7 +5,12 @@ import ServicesSection from '@/components/home/ServicesSection.astro';
 import Layout from '@/layouts/Layout.astro';
 ---
 
-<Layout title="Sunlight">
+<Layout
+  title="Sunlight"
+  meta={{
+    description: 'Donde el diseño y el código cobran vida. Especialistas en diseño UX/UI y desarrollo de aplicaciones web. Creamos experiencias web excepcionales que se adaptan a todas las plataformas. ¡Descubre lo que Sunlight puede hacer por ti!',
+  }}
+>
   <main class="max-w-screen-xl w-full self-center">
     <HeroSection />
     <ServicesSection />

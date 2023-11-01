@@ -16,7 +16,12 @@ export async function getStaticPaths() {
 const data = Astro.props;
 ---
 
-<Layout title={`Sunlight - ${data.shortTitle}`}>
+<Layout
+  title={`Sunlight - ${data.shortTitle}`}
+  meta={{
+    description: data.introduction,
+  }}
+>
   <!-- Titulo -->
   <div class="text-center py-10 px-6 sm:px-8">
     <h1
